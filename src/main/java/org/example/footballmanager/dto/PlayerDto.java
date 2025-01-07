@@ -10,8 +10,8 @@ import org.example.footballmanager.annotation.ValidPosition;
 import org.example.footballmanager.entity.Team;
 import org.example.footballmanager.entity.Transfer;
 import org.example.footballmanager.entity.enums.Position;
-import org.javamoney.moneta.Money;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class PlayerDto {
     private String secondName;
     @ValidPosition
     private Position position;
-    private Money transferPrice;
+    private BigDecimal transferPrice;
     private LocalDate dateOfBirth;
     private Integer age;
     private LocalDate careerStart;

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.example.footballmanager.entity.Player;
 import org.example.footballmanager.entity.Team;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -19,6 +20,8 @@ public class TransferDto {
     private Long id;
     @NotNull
     private Player player;
+    @NotNull
+    private BigDecimal price;
     @NotNull
     private Team newTeam;
     @NotNull

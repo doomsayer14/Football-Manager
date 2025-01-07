@@ -9,7 +9,6 @@ import org.example.footballmanager.repository.TransferRepository;
 import org.example.footballmanager.service.PlayerService;
 import org.example.footballmanager.service.TeamService;
 import org.example.footballmanager.service.TransferService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,9 +18,6 @@ import java.util.List;
 
 @Service
 public class TransferServiceImpl implements TransferService {
-
-    @Value("${money.currency}")
-    private String initialCurrency;
 
     private final TransferRepository transferRepository;
 
@@ -52,6 +48,7 @@ public class TransferServiceImpl implements TransferService {
 
         Transfer transfer = Transfer.builder()
                 .player(player)
+                .price(player.getTransferPrice())
                 .newTeam(newTeam)
                 .transferDate(LocalDate.now())
                 .build();
