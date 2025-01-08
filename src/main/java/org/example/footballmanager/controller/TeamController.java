@@ -61,7 +61,7 @@ public class TeamController {
     }
 
     @PostMapping("/update")
-    public ResponseEntity<Object> updatePlayer(@Valid @RequestBody TeamDto teamDto,
+    public ResponseEntity<Object> updateTeam(@Valid @RequestBody TeamDto teamDto,
                                                BindingResult bindingResult) {
         ResponseEntity<Object> errors = responseErrorValidation.mapValidationService(bindingResult);
         if (!ObjectUtils.isEmpty(errors)) {
@@ -74,7 +74,7 @@ public class TeamController {
     }
 
     @DeleteMapping("/{teamId}")
-    public ResponseEntity<HttpStatus> deletePlayer(@PathVariable("teamId") String teamId) {
+    public ResponseEntity<HttpStatus> deleteTeam(@PathVariable("teamId") String teamId) {
         teamService.deleteTeam(Long.parseLong(teamId));
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

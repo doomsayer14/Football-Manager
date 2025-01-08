@@ -20,7 +20,6 @@ public class TransferDto {
     private Long id;
     @NotNull
     private Player player;
-    @NotNull
     private BigDecimal price;
     @NotNull
     private Team newTeam;
